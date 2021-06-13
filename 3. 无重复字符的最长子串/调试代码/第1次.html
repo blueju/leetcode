@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * @param {string} s
+         * @return {number}
+         */
+        var lengthOfLongestSubstring = function (s) {
+            let stack = new Set();
+            for (let i = 0; i < s.length; i++) {
+                for (let j = i; j < s.length; j++) {
+                    if (stack.has(s[j])) {
+                        stack.clear();
+                        continue;
+                    }
+                }
+            }
+            return stack.length;
+        };
+    </script>
+</body>
+
+</html>
