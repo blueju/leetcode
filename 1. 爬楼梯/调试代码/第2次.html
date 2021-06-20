@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+        * @param {number[]} nums
+        * @param {number} target
+        * @return {number[]}
+        */
+        var twoSum = function (nums, target) {
+            let stack = {};
+            for (let i = 0; i < nums.length; i++) {
+                if (Object.prototype.hasOwnProperty.call(stack, nums[i])) {
+                    return [stack[nums[i]], i];
+                } else {
+                    stack[target - nums[i]] = i;
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>
